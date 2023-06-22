@@ -19,7 +19,7 @@ tr:nth-child(even) {
 }
 
 .button {
-  background-color: #4CAF50;
+  background-color: green;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -71,7 +71,8 @@ if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
     echo "<tr><td> " . $row["id"]. " </td><td> " . $row["name"]. "</td><td>" . $row["price"].
-     "</td><td>" . $row["quantity"].  "</td> <td> <a href='update.php?id=" . $row["id"]. "' ><img src='edit.jpeg' alt='edit article' style='width:42px;height:42px;'></a> </td></tr>";
+     "</td><td>" . $row["quantity"].  "</td> <td> <a href='update.php?id=" . $row["id"]. "' class='button' style='background-color:blue' >EDIT</a>
+      <a href='delete.php?id=" . $row["id"]. "' class='button' style='background-color:red' >DELETE</a></td></tr>";
   }
 } else {
   echo "0 results";
