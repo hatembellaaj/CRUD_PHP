@@ -46,6 +46,7 @@ tr:nth-child(even) {
     <th>NAME</th>
     <th>PRICE</th>
     <th>QUANTITY</th>
+    <th> </th>
   </tr>
 
 
@@ -69,7 +70,8 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo "<tr><td> " . $row["id"]. " </td><td> " . $row["name"]. "</td><td>" . $row["price"]. "</td><td>" . $row["quantity"].  "</td></tr>";
+    echo "<tr><td> " . $row["id"]. " </td><td> " . $row["name"]. "</td><td>" . $row["price"].
+     "</td><td>" . $row["quantity"].  "</td> <td> <a href='update.php?id=" . $row["id"]. "' ><img src='edit.jpeg' alt='edit article' style='width:42px;height:42px;'></a> </td></tr>";
   }
 } else {
   echo "0 results";
